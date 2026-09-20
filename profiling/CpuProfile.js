@@ -26,9 +26,9 @@ const performHeavyTask = () => {
 };
 
 app.get('/heavy', (req, res) => {
-  console.profile();
+//   console.profile();
   const heavyTaskCount = performHeavyTask();
-  console.profileEnd();
+//   console.profileEnd();
 
   res.send(
     JSON.stringify({
@@ -38,6 +38,13 @@ app.get('/heavy', (req, res) => {
   );
 });
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
+
+setTimeout(() => {
+  console.log('Stopping server...');
+  server.close(() => {
+    console.log('Server closed');
+  });
+}, 120000);
