@@ -48,3 +48,10 @@ setTimeout(() => {
     console.log('Server closed');
   });
 }, 120000);
+
+// for this we use cpu-prof 
+// node --cpu-prof \
+//   --cpu-prof-dir="$PWD/profiles" \
+//   --cpu-prof-name=heavy.cpuprofile \
+//   profile.js
+// you can check table or flames grapgh

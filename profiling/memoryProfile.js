@@ -62,3 +62,8 @@ app.get('/memory', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Memory leak demo running on http://localhost:${PORT}`);
 });
+
+//  node --inspect app.js
+//  open chrome://inspect -> go to memory tab
+//  take heap snapshot
+//  compare snapshots to see memory leak
